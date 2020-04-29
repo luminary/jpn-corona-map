@@ -6,9 +6,9 @@
     <script>
         $(function () {
             $.getJSON(
-                'https://app.sabae.cc/api/covid19japan.json',
+                'https://www.stopcovid19.jp/data/covid19japan-fast.json',
                 function (data) {
-                    var area = data.area.sort(function (a, b) {
+                    var area = data.sort(function (a, b) {
                         return b.npatients - a.npatients
                     });
                     Highcharts.chart('container', {

@@ -12,9 +12,9 @@
                 nameToKey[e.properties.name] = e.properties["hc-key"];
             });
             $.getJSON(
-                'https://app.sabae.cc/api/covid19japan.json',
+                'https://www.stopcovid19.jp/data/covid19japan-fast.json',
                 function (data) {
-                    var mapData = data.area.map(e => {return [nameToKey[e.name], e.npatients];});
+                    var mapData = data.map(e => {return [nameToKey[e.name], e.npatients];});
                     Highcharts.mapChart('container2', {
                         chart: {
                             map: 'countries/jp/jp-all',
@@ -41,9 +41,9 @@
                 }
             );
             $.getJSON(
-                'https://app.sabae.cc/api/covid19japan.json',
+                'https://www.stopcovid19.jp/data/covid19japan-fast.json',
                 function (data) {
-                    var area = data.area.sort(function (a, b) {
+                    var area = data.sort(function (a, b) {
                         return b.npatients - a.npatients
                     });
                     Highcharts.chart('container1', {
